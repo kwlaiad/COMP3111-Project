@@ -99,9 +99,15 @@ $scope.getFirstAndRestSentence = function($string) {
 
 $scope.addTodo = function () {
 	var newTodo = $scope.input.wholeMsg.trim();
-
+	var newCate = $scope.input.category;
+	
 	// No input, so just do nothing
 	if (!newTodo.length) {
+		return;
+	}
+	
+	if (!newCate) {
+		window.alert("Please select category.");
 		return;
 	}
 
@@ -120,7 +126,8 @@ $scope.addTodo = function () {
 		tags: "...",
 		echo: 0,
 		report: 0,
-		order: 0
+		order: 0,
+		category: newCate
 	});
 	// remove the posted question in the input
 	$scope.input.wholeMsg = '';
