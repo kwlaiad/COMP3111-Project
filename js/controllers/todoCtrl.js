@@ -119,6 +119,7 @@ $scope.addTodo = function () {
 		timestamp: new Date().getTime(),
 		tags: "...",
 		echo: 0,
+		report: 0,
 		order: 0
 	});
 	// remove the posted question in the input
@@ -157,7 +158,12 @@ $scope.revertEditing = function (todo) {
 };
 
 $scope.removeTodo = function (todo) {
-	$scope.todos.$remove(todo);
+	todo.report = todo.report +1;
+	if(todo.report > 10)
+	{
+		$scope.todos.$remove(todo);
+	}
+	
 };
 
 $scope.clearCompletedTodos = function () {
