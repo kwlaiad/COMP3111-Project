@@ -23,40 +23,63 @@
 
 </head>
 <body ng-controller="TodoCtrl">
-	<font size="10">Questions for {{roomId}}?</font>&nbsp;
 
-	<!--
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">Main</a>
+		</div>
 
-	<a ng-class="{selected: location.path() == '/newechos'}" class="btn btn-primary" href="#/newechos">New Echos</a>
-	<a ng-class="{selected: location.path() == '/tags'}" class="btn btn-success" href="#/tags">Tags</a>
-	<a ng-class="{selected: location.path() == '/users'}" class="btn btn-info" href="#/users">Users</a>
-	<a ng-class="{selected: location.path() == '/about'}" class="btn btn-warning" href="#/about">About</a>
--->
+	<!-- <small>Share room url: {{absurl}}</small> &nbsp; 
+	<a class="btn btn-default" href="/index.html">Main</a> -->
+	<button ng-hide="$authData" class="btn btn-primary left" type="button" ng-click="FBLogin()" style="float: right">Want Admin? Sign in with Facebook</button>
 
-<small>Share room url: {{absurl}}</small> &nbsp;
-<a class="btn btn-default" href="/index.html">Main</a>
-<button ng-hide="$authData" class="btn btn-primary left" type="button" ng-click="FBLogin()">Want Admin? Sign in with Facebook</button>
+	<!-- after login -->
+	<img ng-show="$authData" src="https://graph.facebook.com/{{$authData.facebook.id}}/picture/?type=square&return_ssl_resources=1" alt="{{name}}" />
+	{{$authData.facebook.displayName}}
+	<button ng-show="$authData" class="btn btn-primary left" type="button" ng-click="FBLogout()">Logout</button>
+</nav>
 
-<!-- after login -->
-<img ng-show="$authData" src="https://graph.facebook.com/{{$authData.facebook.id}}/picture/?type=square&return_ssl_resources=1" alt="{{name}}" />
-{{$authData.facebook.displayName}}
-<button ng-show="$authData" class="btn btn-primary left" type="button" ng-click="FBLogout()">Logout</button>
-
-
-
+<div class="container">
+	<div align="center">
+		<font size="10">Questions for {{roomId}}?</font>&nbsp;
+	</div>
+	
+	<div class="col-lg-2">
+		<select name="category" id="category"  ng-model="input.category" >
+			<option value="" disabled select>Select Category</option>
+			<option value="">All</option>
+			<option value="opt1">Lecture</option>
+			<option value="opt2">Labs</option>
+			<option value="opt3">Tutorials</option>
+			<option value="opt4">Others</option>
+		</select>
+	</div>
+	
+<div class="col-lg-12">
 <div class="input-group">
 	<!--
 	<form id="todo-form" ng-submit="addTodo()">
 -->
 <textarea type="text" id="new-todo" class="form-control"
-placeholder="Search or Post Question"
+placeholder="Post Question"
 ng-model="input.wholeMsg" autofocus></textarea>
 <span class="input-group-btn">
 	<button class="btn btn-default" type="button" ng-click="addTodo()">Ask</button>
 </span>
 </div><!-- /input-group -->
 
+</div>
 
+
+
+<div class="col-lg-12">
 <div class="list-group" id="todo-list">
 	<span class="list-group-item" ng-repeat="todo in todos | filter:input | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 		<h4 class="list-group-item-heading" ng-switch on="todo.headLastChar">
@@ -76,6 +99,8 @@ ng-model="input.wholeMsg" autofocus></textarea>
 			<button ng-show="isAdmin" class="btn btn-default btn-xs glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeTodo(todo)">Report</button>
 		</span>
 	</div>
+</div>
+</div>
 
 	<!--
 
@@ -86,8 +111,15 @@ ng-model="input.wholeMsg" autofocus></textarea>
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
 
-
-
+<!-- Background Music -->
+<audio id="bgm" preload="auto" autoplay loop>
+	<source src="bgm/bgm1.mp3">
+</audio>
+<script>
+	var au = document.getElementById("bgm");
+	au.volume = 0.1;
+</script>
+	
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
 
