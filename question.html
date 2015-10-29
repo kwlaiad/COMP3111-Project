@@ -52,7 +52,7 @@
 	</div>
 	
 	<div class="col-lg-2">
-		<select name="category" id="category"  ng-model="input.category" >
+		<select name="category" id="category"  ng-model="search.category" >
 			<option value="" disabled select>Select Category</option>
 			<option value="">All</option>
 			<option value="opt1">Lecture</option>
@@ -75,13 +75,23 @@ ng-model="input.wholeMsg" autofocus></textarea>
 </span>
 </div><!-- /input-group -->
 
+
+</div>
+
+<div class="col-lg-12">
+<div class="search-group">
+<textarea type="text" id="search-todo" class="form-control"
+placeholder="Search"
+ng-model="search.wholeMsg" autofocus
+></textarea>
 </div>
 
 
+</div>
 
 <div class="col-lg-12">
 <div class="list-group" id="todo-list">
-	<span class="list-group-item" ng-repeat="todo in todos | filter:input | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+	<span class="list-group-item" ng-repeat="todo in todos | filter:search | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 		<h4 class="list-group-item-heading" ng-switch on="todo.headLastChar">
 			<span class="label label-danger" ng-show="todo.new">New</span>
 			<span class="badge">{{todo.echo}}</span>
