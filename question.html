@@ -52,9 +52,9 @@
 	</div>
 	
 	<div class="col-lg-2">
-		<select name="category" id="category"  ng-model="search.category" >
+		<select name="category" id="category"  ng-model="input.category" >
 			<option value="" disabled select>Select Category</option>
-			<option value="">All</option>
+			<!-- <option value="">All</option> -->
 			<option value="opt1">Lecture</option>
 			<option value="opt2">Labs</option>
 			<option value="opt3">Tutorials</option>
@@ -75,7 +75,6 @@ ng-model="input.wholeMsg" autofocus></textarea>
 </span>
 </div><!-- /input-group -->
 
-
 </div>
 
 <div class="col-lg-12">
@@ -86,12 +85,20 @@ ng-model="search.wholeMsg" autofocus
 ></textarea>
 </div>
 
-
+<div class="container">
+	<h3>Category</h3>
+	<select id="filterCate" ng-model="todo.category">
+		<option value="">All</option>
+		<option value="opt1">Lecture</option>
+		<option value="opt2">Labs</option>
+		<option value="opt3">Tutorials</option>
+		<option value="opt4">Others</option>
+	</select>
 </div>
 
 <div class="col-lg-12">
 <div class="list-group" id="todo-list">
-	<span class="list-group-item" ng-repeat="todo in todos | filter:search | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+	<span class="list-group-item" ng-repeat="todo in todos | filter:search | filter:todo.category | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 		<h4 class="list-group-item-heading" ng-switch on="todo.headLastChar">
 			<span class="label label-danger" ng-show="todo.new">New</span>
 			<span class="badge">{{todo.echo}}</span>
