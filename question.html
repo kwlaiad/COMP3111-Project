@@ -43,20 +43,36 @@
 <button ng-show="$authData" class="btn btn-primary left" type="button" ng-click="FBLogout()">Logout</button>
 
 
+<div class="col-lg-10">
 
+	<div class="col-lg-2">
+		<select name="category" id="category"  ng-model="input.category" >
+			<option value="" disabled select>Select Category</option>
+			<option value="">All</option>
+			<option value="opt1">Lecture</option>
+			<option value="opt2">Labs</option>
+			<option value="opt3">Tutorials</option>
+			<option value="opt4">Others</option>
+		</select>
+	</div>
+	
 <div class="input-group">
 	<!--
 	<form id="todo-form" ng-submit="addTodo()">
 -->
 <textarea type="text" id="new-todo" class="form-control"
-placeholder="Search or Post Question"
+placeholder="Post Question"
 ng-model="input.wholeMsg" autofocus></textarea>
 <span class="input-group-btn">
 	<button class="btn btn-default" type="button" ng-click="addTodo()">Ask</button>
 </span>
 </div><!-- /input-group -->
 
+</div>
 
+
+
+<div class="col-lg-12">
 <div class="list-group" id="todo-list">
 	<span class="list-group-item" ng-repeat="todo in todos | filter:input | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 		<h4 class="list-group-item-heading" ng-switch on="todo.headLastChar">
@@ -76,6 +92,7 @@ ng-model="input.wholeMsg" autofocus></textarea>
 			<button ng-show="isAdmin" class="btn btn-default btn-xs glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeTodo(todo)">Report</button>
 		</span>
 	</div>
+</div>
 
 	<!--
 
@@ -86,8 +103,15 @@ ng-model="input.wholeMsg" autofocus></textarea>
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
 
-
-
+<!-- Background Music -->
+<audio id="bgm1" src="bgm/bgm1.mp3" autoplay>
+	<embed src="bgm/bgm1.mp3" loop="true" hidden="true" autostart="true">
+</audio>
+<script>
+	var au = document.getElementById("bgm1");
+	au.volume = 0.1;
+</script>
+	
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
 
