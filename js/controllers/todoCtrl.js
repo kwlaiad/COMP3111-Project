@@ -165,10 +165,15 @@ $scope.revertEditing = function (todo) {
 };
 
 $scope.removeTodo = function (todo) {
+	$scope.editedTodo = todo;
 	todo.report = todo.report +1;
 	if(todo.report > 10)
 	{
 		$scope.todos.$remove(todo);
+	}else
+	{
+		$scope.buttonClicked = true;
+		$scope.$todos.$save(todo);
 	}
 	
 };
