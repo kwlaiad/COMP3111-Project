@@ -46,6 +46,28 @@
 	<button ng-show="$authData" class="btn btn-primary left" type="button" ng-click="FBLogout()">Logout</button>
 </nav>
 
+<!-- Background Music -->
+<div class="bgm" align="right">
+	<audio id="bgm" preload="auto" autoplay loop>
+		<source src="bgm/bgm.mp3">
+	</audio>
+	<button type="button" onclick="play_pause()">Play/Pause</button>
+	<script>
+		var au = document.getElementById("bgm");
+		au.volume = 0.2;
+
+		function play_pause() {
+			var bgm = document.getElementById("bgm");
+			if(bgm.paused) {
+				bgm.play();
+			}
+			else{
+				bgm.pause();
+			}
+		}
+	</script>
+</div>
+
 <div class="container">
 	<div align="center">
 		<font size="10">Questions for {{roomId}}?</font>&nbsp;
@@ -128,15 +150,8 @@ ng-model="search.wholeMsg" autofocus
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
 
-<!-- Background Music -->
-<audio id="bgm" preload="auto" autoplay loop>
-	<source src="bgm/bgm1.mp3">
-</audio>
-<script>
-	var au = document.getElementById("bgm");
-	au.volume = 0.1;
-</script>
-	
+
+
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
 
