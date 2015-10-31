@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 	<!-- need this for comlted ones. TODO: can I do this in bootstrap -->
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="css/main.css">
 
 </head>
 <body ng-controller="TodoCtrl">
@@ -127,8 +127,8 @@ ng-model="search.wholeMsg" autofocus
 			<!-- switch -->
 			<span ng-switch-when="?" class="glyphicon glyphicon-question-sign"></span>
 			<span ng-switch-when="!" class="glyphicon glyphicon-ice-lolly"></span>
-			<span ng-class="{completed: todo.completed}">{{todo.head}}</span>
-		</h4>
+			</h4>
+			<p dd-text-collapse dd-text-collapse-max-length="100" dd-text-collapse-text="{{todo.wholeMsg}}"></p>
 		<p class="list-group-item-text"><span ng-bind-html="todo.trustedDesc"></span> created: {{todo.dateString}}
 			<span ng-show="todo.tags">tags: {{todo.tags}}</span></p>
 
@@ -149,8 +149,7 @@ ng-model="search.wholeMsg" autofocus
 	class="pull-right btn btn-default glyphicon glyphicon-arrow-down"
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
-
-
+<!-- ng-class="{completed: todo.completed}" -->
 
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
@@ -169,5 +168,7 @@ ng-model="search.wholeMsg" autofocus
 <script src="js/directives/todoFocus.js"></script>
 <script src="js/directives/todoBlur.js"></script>
 <script src="js/directives/todoEscape.js"></script>
+<!-- https://github.com/doukasd/AngularJS-Components -->
+<script src="js/directives/dd-text-collapse.js"></script>
 </body>
 </html>
