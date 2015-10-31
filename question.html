@@ -2,7 +2,6 @@
 <html lang="en" ng-app="todomvc" scroll data-framework="firebase">
 <head>
 	<meta charset="utf-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,14 +11,20 @@
 	<meta http-equiv="expires" content="0" />
 	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 	<meta http-equiv="pragma" content="no-cache" />
-
 	<title>Question Room: {{roomId}}</title>
-
+  
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 	<!-- need this for comlted ones. TODO: can I do this in bootstrap -->
 	<link rel="stylesheet" href="css/main.css">
+
+
+	<!-- Begin emoji-picker Stylesheets -->
+	<link href="lib/css/nanoscroller.css" rel="stylesheet">
+	<link href="lib/css/emoji.css" rel="stylesheet">
+	<!-- End emoji-picker Stylesheets -->
 
 </head>
 <body ng-controller="TodoCtrl">
@@ -86,12 +91,16 @@
 	
 <div class="col-lg-12">
 <div class="input-group">
+
 	<!--
 	<form id="todo-form" ng-submit="addTodo()">
 -->
-<textarea type="text" id="new-todo" class="form-control"
-placeholder="Post Question"
-ng-model="input.wholeMsg" autofocus></textarea>
+<p class="lead emoji-picker-container">
+<input type="email" class="form-control" placeholder="Emoji Picker" data-emojiable="true" data-emoji-input="unicode">
+</p>
+<p class="lead emoji-picker-container">
+<textarea type="text" id="new-todo" class="form-control" placeholder="Post Question" ng-model="input.wholeMsg" autofocus></textarea></p>
+
 <span class="input-group-btn">
 	<button class="btn btn-default" type="button" ng-click="addTodo()">Ask</button>
 </span>
@@ -101,9 +110,9 @@ ng-model="input.wholeMsg" autofocus></textarea>
 
 <div class="col-lg-12">
 <div class="search-group">
+
 <textarea type="text" id="search-todo" class="form-control"
-placeholder="Search"
-ng-model="search.wholeMsg" autofocus
+placeholder="Search" ng-model="search.wholeMsg" autofocus
 ></textarea>
 </div>
 
@@ -140,7 +149,6 @@ ng-model="search.wholeMsg" autofocus
 	</div>
 </div>
 </div>
-
 	<!--
 
 	<div id="toTop" class="btn btn-info"><span class="fa fa-arrow-up">Back to Top</span></div>
@@ -149,15 +157,23 @@ ng-model="search.wholeMsg" autofocus
 	class="pull-right btn btn-default glyphicon glyphicon-arrow-down"
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
+<<<<<<< Updated upstream
 <!-- ng-class="{completed: todo.completed}" -->
+=======
+
+>>>>>>> Stashed changes
+
 
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
+
+
 
 <!-- 2.2.2 -->
 <script src="js/lib/firebase.js"></script>
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/angularfire.js"></script>
+
 
 <!-- Ng storage 0.3.6  -->
 <script src="js/lib/ngStorage.min.js"></script>
@@ -170,5 +186,34 @@ ng-model="search.wholeMsg" autofocus
 <script src="js/directives/todoEscape.js"></script>
 <!-- https://github.com/doukasd/AngularJS-Components -->
 <script src="js/directives/dd-text-collapse.js"></script>
+
+
+<!-- emoji-picker -->
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script src="lib/js/nanoscroller.min.js"></script>
+<script src="lib/js/tether.min.js"></script>
+<script src="lib/js/config.js"></script>
+<script src="lib/js/util.js"></script>
+<script src="lib/js/jquery.emojiarea.js"></script>
+<script src="lib/js/emoji-picker.js"></script>
+
+<script>
+    $(function() {
+      // Initializes and creates emoji set from sprite sheet
+      window.emojiPicker = new EmojiPicker({
+        emojiable_selector: '[data-emojiable=true]',
+        assetsPath: 'lib/img/',
+        popupButtonClasses: 'fa fa-smile-o'
+      });
+      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+      // It can be called as many times as necessary; previously converted input fields will not be converted again
+      window.emojiPicker.discover();
+    });
+</script>
+
+
 </body>
 </html>
