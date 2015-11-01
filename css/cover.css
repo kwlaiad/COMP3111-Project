@@ -13,12 +13,11 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: 333;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: #999;
+  
 }
-
 
 /*
  * Base structure
@@ -27,12 +26,22 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #FE2E2E;
+  background-color: #FFF;
+  background-image: url(../bg_image/HKUST01.jpg); 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  background-size: cover; 
+  
 }
+
 body {
-  color: #fff;
+  color: #FFF; 
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  text-shadow: 0 1px 3px rgba(#FFF,#fff,0,.5);
+  font-family: Arial; 
+  
+  
+ 
 }
   body .emoji-wysiwyg-editor {
     text-align: left; }
@@ -83,7 +92,7 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
+  color: #333; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
