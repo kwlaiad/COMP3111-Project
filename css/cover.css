@@ -181,3 +181,9 @@ body {
     width: 700px
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
+.heading_style{
+  color: white; 
+  font-family: Verdana; 
+  
+}
