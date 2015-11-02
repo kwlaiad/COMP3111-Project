@@ -13,18 +13,15 @@
 	<meta http-equiv="pragma" content="no-cache" />
 	<title>Question Room: {{roomId}}</title>
   
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		
+	<!-- Emoji Data -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.a.css">
 
-	<!-- need this for comlted ones. TODO: can I do this in bootstrap -->
 	<link rel="stylesheet" href="css/main.css">
-
-
-	<!-- Begin emoji-picker Stylesheets -->
-	<link href="lib/css/nanoscroller.css" rel="stylesheet">
-	<link href="lib/css/emoji.css" rel="stylesheet">
-	<!-- End emoji-picker Stylesheets -->
 
 </head>
 <body ng-controller="TodoCtrl">
@@ -57,20 +54,6 @@
 		<source src="bgm/bgm.mp3">
 	</audio>
 	<button type="button" onclick="play_pause()">Play/Pause</button>
-	<script>
-		var au = document.getElementById("bgm");
-		au.volume = 0.2;
-
-		function play_pause() {
-			var bgm = document.getElementById("bgm");
-			if(bgm.paused) {
-				bgm.play();
-			}
-			else{
-				bgm.pause();
-			}
-		}
-	</script>
 </div>
 
 <div class="container">
@@ -78,9 +61,10 @@
 		<font size="10">Questions for {{roomId}}?</font>&nbsp;
 	</div>
 	
+	
 	<div class="col-lg-2">
 		<select name="category" id="category"  ng-model="input.category" >
-			<option value="" disabled select>Select Category</option>
+			<option value="" disabled select >Select Category</option>
 			<!-- <option value="">All</option> -->
 			<option value="opt1">Lecture</option>
 			<option value="opt2">Labs</option>
@@ -92,14 +76,7 @@
 <div class="col-lg-12">
 <div class="input-group">
 
-	<!--
-	<form id="todo-form" ng-submit="addTodo()">
--->
-<p class="lead emoji-picker-container">
-<input type="email" class="form-control" placeholder="Emoji Picker" data-emojiable="true" data-emoji-input="unicode">
-</p>
-<p class="lead emoji-picker-container">
-<textarea type="text" id="new-todo" class="form-control" placeholder="Post Question" ng-model="input.wholeMsg" autofocus></textarea></p>
+<textarea id="new-todo" class="form-control emojiable-option" placeholder="Post Question. Don't enter emoji only." ng-model="input.wholeMsg" autofocus></textarea>
 
 <span class="input-group-btn">
 	<button class="btn btn-default" type="button" ng-click="addTodo()">Ask</button>
@@ -108,12 +85,11 @@
 
 </div>
 
-<div class="col-lg-12">
+<div class="col-lg-11">
 <div class="search-group">
 
 <textarea type="text" id="search-todo" class="form-control"
-placeholder="Search" ng-model="search.wholeMsg" autofocus
-></textarea>
+placeholder="Search" ng-model="search.wholeMsg" ></textarea>
 </div>
 
 <div class="container">
@@ -157,17 +133,16 @@ placeholder="Search" ng-model="search.wholeMsg" autofocus
 	class="pull-right btn btn-default glyphicon glyphicon-arrow-down"
 	type="button" ng-click="increaseMax()"> Show more</button>
 -->
-<<<<<<< Updated upstream
-<!-- ng-class="{completed: todo.completed}" -->
-=======
 
->>>>>>> Stashed changes
+<!-- ng-class="{completed: todo.completed}" -->
+
 
 
 <!-- Autolink from https://github.com/gregjacobs/Autolinker.js> -->
 <script src="js/lib/Autolinker.min.js"></script>
 
-
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>	
 
 <!-- 2.2.2 -->
 <script src="js/lib/firebase.js"></script>
@@ -187,33 +162,36 @@ placeholder="Search" ng-model="search.wholeMsg" autofocus
 <!-- https://github.com/doukasd/AngularJS-Components -->
 <script src="js/directives/dd-text-collapse.js"></script>
 
+<!-- emoji https://github.com/wedgies/jquery-emoji-picker -->
+<script src="js/emoji/jquery.emojipicker.js"></script>
+<script src="js/emoji/jquery.emojipicker.a.js"></script>
 
-<!-- emoji-picker -->
+<script type="text/javascript">
+	var au = document.getElementById("bgm");
+	au.volume = 0.2;
 
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script src="lib/js/nanoscroller.min.js"></script>
-<script src="lib/js/tether.min.js"></script>
-<script src="lib/js/config.js"></script>
-<script src="lib/js/util.js"></script>
-<script src="lib/js/jquery.emojiarea.js"></script>
-<script src="lib/js/emoji-picker.js"></script>
-
-<script>
-    $(function() {
-      // Initializes and creates emoji set from sprite sheet
-      window.emojiPicker = new EmojiPicker({
-        emojiable_selector: '[data-emojiable=true]',
-        assetsPath: 'lib/img/',
-        popupButtonClasses: 'fa fa-smile-o'
-      });
-      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-      // It can be called as many times as necessary; previously converted input fields will not be converted again
-      window.emojiPicker.discover();
-    });
+	function play_pause() {
+		var bgm = document.getElementById("bgm");
+		if(bgm.paused) {
+			bgm.play();
+		}
+		else{
+			bgm.pause();
+		}
+	}
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(e) {
+
+	$('#new-todo').emojiPicker({
+		width: '300px',
+		height: '300px'
+	});
+	  
+	$('div.emojiPickerIcon').css("z-index", "99");
+});
+</script>
 
 </body>
 </html>
