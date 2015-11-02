@@ -40,6 +40,7 @@ body {
   /*text-shadow: 0 1px 3px rgba(#FFF,#fff,0,.5);*/
   font-family: Arial; 
 }
+
   body .emoji-wysiwyg-editor {
     text-align: left; }
     body .emoji-wysiwyg-editor.textarea-control {
@@ -55,6 +56,8 @@ body {
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
+
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
@@ -121,10 +124,10 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 0px 0px;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
+  padding: 0px 0px;
   font-weight: bold;
 }
 
@@ -175,10 +178,10 @@ body {
 
 .transbox {
   margin: 30px;
-    background-color: #585858;
+    background-color: #333;
     border: 2px solid white;
     opacity: 0.8;
-    width: 700px
+    width: 100px
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
@@ -186,4 +189,51 @@ body {
   color: white; 
   font-family: Verdana; 
   
+}
+
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+  
+.jumbotron {
+  
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.learn-more {
+  padding: 0 0; 
+}
+
+.learn-more h3 {
+  font-family: Arial; 
+  font-size: 18px;
+  
+}
+
+.learn-more a {
+  color: white;
+ 
 }
