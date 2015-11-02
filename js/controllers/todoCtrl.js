@@ -172,8 +172,8 @@ $scope.removeTodo = function (todo) {
 		$scope.todos.$remove(todo);
 	}else
 	{
-		$scope.buttonClicked = true;
-		$scope.$todos.$save(todo);
+		$scope.todos.buttonClicked = true;
+		$scope.todos.$save(todo);
 	}
 	
 };
