@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+   	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--link rel="icon" href="../../favicon.ico"-->
+	<!--link rel="icon" type="image/jpeg" sizes="32x32" href="bg_image/678.jpeg"-->
+	<link rel="icon" type="image/png" sizes="32x32" href="bg_image/789.png">
+
+	<title>QueStudy - Study Question Room</title>
+	<link rel="shouticon" href="../../favicon.ico">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Custom styles for this template -->
+	<link href="css/cover.css" rel="stylesheet">
+	
+</head>
+
+<!--index:homepage-->
+
+<body ng-controller="controller">
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="masthead clearfix">
+					<div class="inner">
+						<ul class="pull-left"><h3 class="masthead-brand">QueStudy=Question+Study</h3></ul>
+						<nav>
+							<ul class="nav masthead-nav">
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="index2.html">Features</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+
+<!--home-->
+				
+	<h1 class="cover-heading"><p class="heading_style">What does our team aims for?</p></h1>
+					
+											
+
+	  <div class="container">
+		 <div class="learn-more">
+		<div class="row">
+
+	  	  <div class="col-md-4">
+			<h3>Communication</h3>
+			<h3>Provide a platform to enhance the communication for studetns and teachers. </h3>
+			<p><a href="http://www.comp3111.xyz/"><u>See details about our course Comp3111</u></a></p>
+		  </div>
+		  
+		  <div class="col-md-4">
+			<h3>Sharing</h3>
+			<h3>Ask academic questions, which could brainstorm the ideas of different courses.</h3>
+			<p><a href="https://w5.ab.ust.hk/wcq/cgi-bin/"><u>See more courses</u></a></p>
+	      </div>
+
+	  </div><!--row-closing-->
+	</div>
+</div>	
+	
+
+						<div class="mastfoot">
+							<div class="inner">
+								<p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+							</div>
+						</div>
+
+
+					</div>
+
+
+				</div>
+				
+				</div>
+				
+
+
+		
+
+<!--end of home-->
+
+<!--features-->			
+			    
+
+			
+			
+			<!-- Bootstrap core JavaScript
+			================================================== -->
+			<!-- Placed at the end of the document so the pages load faster -->
+			<script src="js/lib/jquery.min.js"></script>
+			<script src="js/lib/bootstrap.min.js"></script>
+
+			<!-- 1.4.2 -->
+			<script src="js/lib/angular.min.js"></script>
+
+			<script>
+			angular.module('app', [])
+			.controller('controller', ['$scope', '$location', '$window', function($scope, $location, $window) {
+				$scope.example = {
+					text: '',
+					word: /^\s*\w*\s*$/
+				};
+
+				$scope.join = function () {
+					$window.location.href = 'question.html#/' + $scope.example.text;
+				}
+			}]);
+			</script>
+		</body>
+		</html>
