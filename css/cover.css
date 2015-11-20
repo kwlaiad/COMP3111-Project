@@ -27,7 +27,7 @@ html,
 body {
   height: 100%;
   background-color: #FFF;
-  background-image: url(../bg_image/photo-82386301.jpg); 
+  background-image: url(../bg_image/123.jpg); 
   background-repeat: no-repeat; 
   background-position: center center; 
   background-size: cover; 
@@ -72,13 +72,18 @@ body {
   padding: 30px;
 }
 
-
 /*
  * Header
  */
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.masthead-brand-second {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
 
 .masthead-nav > li {
@@ -92,16 +97,18 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #333; /* IE8 proofing */
+  color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
+
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #FE2E2E;
   border-bottom-color: rgba(255,255,255,.25);
 }
+
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
@@ -176,64 +183,44 @@ body {
   }
 }
 
-.transbox {
-  margin: 30px;
-    background-color: #333;
-    border: 2px solid white;
-    opacity: 0.8;
-    width: 100px
-    filter: alpha(opacity=60); /* For IE8 and earlier */
-}
 
 .heading_style{
   color: white; 
-  font-family: Verdana; 
+  font-size: 20px; 
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
   
 }
 
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
+.nav_a {
+  color: #fff;
+  font-size: 16px;
   font-weight: bold;
   padding: 14px 10px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+* {
+    box-sizing: border-box;
+}
+
+.featureList {
   
-.jumbotron {
-  
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.jumbotron .container {
-  position: relative;
-  top:100px;
-}
-
-.jumbotron h1 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-}
-
-.jumbotron p {
-  font-size: 20px;
-  color: #fff;
-}
-
-.learn-more {
-  padding: 0 0; 
-}
-
-.learn-more h3 {
-  font-family: Arial; 
-  font-size: 18px;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  list-style-type: none;
+  text-align: center;
+  font-size: 130%;
+  margin-bottom: 50px;
   
 }
 
-.learn-more a {
-  color: white;
- 
+.col-lg-6 {
+    width: 50%;
+}
+  
+.col-xs-12 {
+    width: 100%;
 }
