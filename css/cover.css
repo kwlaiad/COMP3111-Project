@@ -13,12 +13,11 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: 333;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: #999;
+  
 }
-
 
 /*
  * Base structure
@@ -27,13 +26,26 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #FFF;
+  background-image: url(../bg_image/photo-82386301.jpg); 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  background-size: cover; 
+  
 }
+
 body {
-  color: #fff;
+  color: #fff; 
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  /*text-shadow: 0 1px 3px rgba(#FFF,#fff,0,.5);*/
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
+
+  body .emoji-wysiwyg-editor {
+    text-align: left; }
+    body .emoji-wysiwyg-editor.textarea-control {
+      min-height: 7em;
+      resize: vertical; }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -44,6 +56,8 @@ body {
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
+
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
@@ -78,14 +92,14 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
+  color: #333; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #a9a9a9;
+  border-bottom-color: #FE2E2E;
   border-bottom-color: rgba(255,255,255,.25);
 }
 .masthead-nav > .active > a,
@@ -110,10 +124,10 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 0px 0px;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
+  padding: 0px 0px;
   font-weight: bold;
 }
 
@@ -162,3 +176,64 @@ body {
   }
 }
 
+.transbox {
+  margin: 30px;
+    background-color: #333;
+    border: 2px solid white;
+    opacity: 0.8;
+    width: 100px
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.heading_style{
+  color: white; 
+  font-family: Verdana; 
+  
+}
+
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+  
+.jumbotron {
+  
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.learn-more {
+  padding: 0 0; 
+}
+
+.learn-more h3 {
+  font-family: Arial; 
+  font-size: 18px;
+  
+}
+
+.learn-more a {
+  color: white;
+ 
+}

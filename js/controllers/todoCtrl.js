@@ -61,9 +61,20 @@ $scope.$watchCollection('todos', function () {
 			remaining++;
 		}
 
+		if ($scope.$storage[todo.$id] == undefined){
+            $scope.$storage[todo.$id] = {
+                echoed: false,
+                reported: false
+            }
+        }  
+				
 		// set time
 		todo.dateString = new Date(todo.timestamp).toString();
 		todo.tags = todo.wholeMsg.match(/#\w+/g);
+		
+		if (todo.comments == null) {
+			todo.comments = [];
+		}
 
 		todo.trustedDesc = $sce.trustAsHtml(todo.linkedDesc);
 	});
@@ -127,8 +138,16 @@ $scope.addTodo = function () {
 		echo: 0,
 		report: 0,
 		order: 0,
+		comments: [],
+		new_com: '',
 		category: newCate
-	});
+	}).then(function(ref){
+                var id = ref.key();
+                $scope.$storage[id] = {
+                       echoed: false,
+                       reported: false
+                      };
+		});
 	// remove the posted question in the input
 	$scope.input.wholeMsg = '';
 };
@@ -143,10 +162,8 @@ $scope.addEcho = function (todo) {
 	todo.echo = todo.echo + 1;
 	// Hack to order using this order.
 	todo.order = todo.order -1;
+	$scope.$storage[todo.$id].echoed = true;
 	$scope.todos.$save(todo);
-
-	// Disable the button
-	$scope.$storage[todo.$id] = "echoed";
 };
 
 $scope.doneEditing = function (todo) {
@@ -167,16 +184,38 @@ $scope.revertEditing = function (todo) {
 $scope.removeTodo = function (todo) {
 	$scope.editedTodo = todo;
 	todo.report = todo.report +1;
-	if(todo.report > 10)
+	if(todo.report > 5)
 	{
 		$scope.todos.$remove(todo);
 	}else
 	{
-		$scope.buttonClicked = true;
-		$scope.$todos.$save(todo);
+		$scope.$storage[todo.$id].reported = true;
+		$scope.todos.$save(todo);
 	}
 	
 };
+
+$scope.addComment = function (todo) {
+	var newcom = todo.new_com;
+	
+	$scope.editedTodo = todo;
+	
+	if(!newcom.length) {
+		return;
+	}
+	
+	todo.comments.push ({
+		msg: newcom,
+		timestamp: new Date().getTime()
+	});
+	todo.new_com = '';
+	$scope.todos.$save(todo);
+};
+
+$scope.getPostDate = function (time) {
+	var postDate = new Date(time).toString();
+	return postDate;
+}
 
 $scope.clearCompletedTodos = function () {
 	$scope.todos.forEach(function (todo) {

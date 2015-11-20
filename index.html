@@ -7,37 +7,45 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../favicon.ico">
+	<!--link rel="icon" href="../../favicon.ico"-->
+	<!--link rel="icon" type="image/jpeg" sizes="32x32" href="bg_image/678.jpeg"-->
+	<link rel="icon" type="image/png" sizes="32x32" href="bg_image/789.png">
 
-	<title>Question Room</title>
+	<title>QueStudy - Study Question Room</title>
+	<link rel="shouticon" href="../../favicon.ico">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 	<!-- Custom styles for this template -->
 	<link href="css/cover.css" rel="stylesheet">
+	
 </head>
+
+<!--index:homepage-->
+
 <body ng-controller="controller">
 	<div class="site-wrapper">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 				<div class="masthead clearfix">
 					<div class="inner">
-						<h3 class="masthead-brand">Question Room</h3>
+						<ul class="pull-left"><h3 class="masthead-brand">""QueStudy=Question+Study</h3></ul>
 						<nav>
 							<ul class="nav masthead-nav">
-								<li class="active"><a href="#">Home</a></li>
-								<li><a href="#">Features</a></li>
+								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="index2.html">Features</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
 				</div>
 
+<!--home-->
 				<div class="inner cover">
-					<h1 class="cover-heading">Ask More Questions!</h1>
-					<p class="lead">This totally anonymous and real-time updating question moderated system permits students to ask more questions in a typical class setting.
-						Simply join a question room using a simple name (such as comp3111).</p>
+					<h1 class="cover-heading"><p class="heading_style">Ask More Questions!</p></h1>
+					<p class="lead">This totally anonymous and real-time updating question moderated system permits students to ask more questions.</p>
+						<p class="lead">Simply join a question room using a simple name (such as comp3111).</p></p>
 						<p class="lead" class="col-md-2 col-md-offset-5">
 							<form name="form" ng-submit="join()" class="navbar-form navbar-left" role="search">
 								<input type="text" name = "input" class="form-control large"
@@ -55,7 +63,7 @@
 						</p>
 
 						<div class="alert alert-warning" role="alert" ng-show="form.input.$error.required">
-							Room name is required!</div>
+							Please enter the Room name. (e.g. comp3111 / math2411)</div>
 							<div class="alert alert-warning" role="alert" ng-show="form.input.$error.pattern">
 								Room name must be a single English word!
 							</div>
@@ -74,6 +82,13 @@
 
 			</div>
 
+<!--end of home-->
+
+<!--features-->			
+			    
+
+			
+			
 			<!-- Bootstrap core JavaScript
 			================================================== -->
 			<!-- Placed at the end of the document so the pages load faster -->
