@@ -30,11 +30,11 @@
 			<div class="cover-container">
 				<div class="masthead clearfix">
 					<div class="inner">
-						<ul class="pull-left"><h3 class="masthead-brand">""QueStudy=Question+Study</h3></ul>
 						<nav>
+						<ul class="pull-left"><div class="nav_a">QueStudy=Question+Study</div></ul>
 							<ul class="nav masthead-nav">
 								<li class="active"><a href="index.html">Home</a></li>
-								<li class="active"><a href="index2.html">Features</a></li>
+								<li><a href="index2.html">Features</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</nav>
@@ -43,10 +43,12 @@
 
 <!--home-->
 				<div class="inner cover">
-					<h1 class="cover-heading"><p class="heading_style">Ask More Questions!</p></h1>
-					<p class="lead">This totally anonymous and real-time updating question moderated system permits students to ask more questions.</p>
-						<p class="lead">Simply join a question room using a simple name (such as comp3111).</p></p>
-						<p class="lead" class="col-md-2 col-md-offset-5">
+					<h1 class="cover-heading"><p class="heading_style"><img src="bg_image/icon_trial.jpg" height="200" width="200"></p></h1>
+					<h1 class="cover-heading"><p class="heading_style">Question Forum</p></h1>
+					<p class="heading_style">This totally anonymous and real-time updating question moderated system permits students to ask more questions.</p>
+						<p class="heading_style">Simply join a question room using a simple name (such as comp3111).</p></p>
+						
+						<p class="lead" class="col-md-8 col-md-offset-5">
 							<form name="form" ng-submit="join()" class="navbar-form navbar-left" role="search">
 								<input type="text" name = "input" class="form-control large"
 								ng-model="example.text"
@@ -67,7 +69,11 @@
 							<div class="alert alert-warning" role="alert" ng-show="form.input.$error.pattern">
 								Room name must be a single English word!
 							</div>
-
+						</div>
+						
+						<div class="inner cover">
+						
+							
 						</div>
 
 						<div class="mastfoot">
