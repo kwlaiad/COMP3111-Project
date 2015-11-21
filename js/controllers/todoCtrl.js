@@ -108,6 +108,13 @@ $scope.getFirstAndRestSentence = function($string) {
 	return [head, desc];
 };
 
+$scope.inputphoto = function()
+{
+	
+	$scope.input.wholeMsg = $scope.input.wholeMsg + '<img src"enter image url"></img>';
+	
+}
+
 $scope.addTodo = function () {
 	var newTodo = $scope.input.wholeMsg.trim();
 	var newCate = $scope.input.category;
