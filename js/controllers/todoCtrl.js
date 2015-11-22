@@ -110,9 +110,12 @@ $scope.getFirstAndRestSentence = function($string) {
 
 $scope.inputphoto = function()
 {
+	if($scope.photo.url.length != 0)
+	{
+		$scope.input.wholeMsg = $scope.input.wholeMsg + '<img src"'+ $scope.photo.url+'"></img>';
+	}
 	
-	$scope.input.wholeMsg = $scope.input.wholeMsg + '<img src"enter image url"></img>';
-	
+
 }
 
 $scope.addTodo = function () {
