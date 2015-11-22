@@ -13,11 +13,17 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
+  
+   
+  height: 35px; 
+  width: 70px; 
   color: 333;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #999;
   
 }
+
+
 
 /*
  * Base structure
@@ -27,7 +33,7 @@ html,
 body {
   height: 100%;
   background-color: #FFF;
-  background-image: url(../bg_image/123.jpg); 
+  background-image: url(../bg_image/Minionwowow.jpg); 
   background-repeat: no-repeat; 
   background-position: center center; 
   background-size: cover; 
