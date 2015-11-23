@@ -148,7 +148,7 @@ $scope.addTodo = function () {
 		echo: 0,
 		report: 0,
 		order: 0,
-		comments: [],
+		comments: {},
 		new_com: '',
 		category: newCate
 	}).then(function(ref){
