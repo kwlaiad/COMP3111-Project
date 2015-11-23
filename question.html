@@ -115,7 +115,7 @@ placeholder="Search" ng-model="search.wholeMsg" ></textarea>
 <div class="list-group" id="todo-list">
 	<div class="list-group-item" ng-repeat="todo in todos | filter:search | filter:todo.category | questionFilter:maxQuestion" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 		<h4 class="list-group-item-heading" ng-switch on="todo.headLastChar">
-			<span class="label label-danger" ng-show="todo.new">New</span>
+		
 			<span class="badge">{{todo.echo}}</span>
 			<!-- switch -->
 			<span ng-switch-when="?" class="glyphicon glyphicon-question-sign"></span>
