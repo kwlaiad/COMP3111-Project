@@ -47,26 +47,29 @@
 					<h1 class="cover-heading"><p class="heading_style"><img src="bg_image/hot.jpg" height="200" width="700"></p></h1>
 					<h1 class="cover-heading"><p class="nav_b">Hottest Question Rooms</p></h1>
                     
+                    
                     <ul class="list-inline">
                         
                         <li>
-                            <a href="#" class="btn btn-lg btn-default"
-                                ng-click="join()"><span class="network-name">COMP3111</span></a>
+                            <a class="hot-btn hot-btn-default hot-btn-lg" ng-click="join()" ng-model="example.text">
+                                <span class="network-name">COMP3111</span>
+                            </a>
                         </li>
                         
                         <li>
-                            <a class="btn btn-default btn-lg ng-pristine ng-valid ng-touched" ng-click="join()" ng-model="example.text" href="#">
+                            <a class="hot-btn hot-btn-default hot-btn-lg" ng-click="join()" ng-model="example.text">
                                 <span class="network-name">COMP3711</span>
                             </a>
                         </li>
                         
                         <li>
-                            <a class="btn btn-default btn-lg ng-pristine ng-valid ng-touched" ng-click="join()" ng-model="example.text" href="#">
+                            <a class="hot-btn hot-btn-default hot-btn-lg" ng-click="join()" ng-model="example.text">
                                 <span class="network-name">COMP2012</span>
                             </a>
                         </li>
                         
                         </ul>
+
 
 <!--the foot string-->
 						<div class="mastfoot">

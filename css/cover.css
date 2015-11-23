@@ -21,8 +21,6 @@ a:hover {
   
 }
 
-
-
 /*
  * Base structure
  */
@@ -34,8 +32,7 @@ body {
   background-image: url(../bg_image/Minionwowow.jpg); 
   background-repeat: no-repeat; 
   background-position: center center; 
-  background-size: cover; 
-  
+  background-size: cover;
 }
 
 body {
@@ -265,11 +262,12 @@ body {
 * {
     box-sizing: border-box;
 }
-.btn-group-lg > .btn, .btn-lg {
+
+.hot-btn-group-lg > .hot-btn, .hot-btn-lg {
     font-size: 18px;
     line-height: 1.33333;
 }
-.btn-default {
+.hot-btn-default {
     color: #333;
 }
 
@@ -280,7 +278,18 @@ a {
     list-style: outside none none;
 }
 
-.btn {
+.hot-btn-default,
+.hot-btn-default:hover,
+.hot-btn-default:focus {
+    height: 35px;
+    width: 120px;
+    color: 333;
+    text-shadow: none; /* Prevent inheritence from `body` */
+    background-color: #999;
+    
+}
+
+.hot-btn {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0px;
@@ -295,3 +304,10 @@ a {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
