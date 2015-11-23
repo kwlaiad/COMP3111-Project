@@ -216,16 +216,11 @@ $scope.addComment = function (todo) {
 	
 	todo.comments.push ({
 		msg: newcom,
-		timestamp: new Date().getTime()
+		dateString:	new Date(new Date().getTime()).toString()
 	});
 	todo.new_com = '';
 	$scope.todos.$save(todo);
 };
-
-$scope.getPostDate = function (time) {
-	var postDate = new Date(time).toString();
-	return postDate;
-}
 
 $scope.clearCompletedTodos = function () {
 	$scope.todos.forEach(function (todo) {

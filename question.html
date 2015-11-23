@@ -133,7 +133,7 @@ placeholder="Search" ng-model="search.wholeMsg" ></textarea>
 			<div class="comment">
 				<div ng-repeat="com in todo.comments">
 					<p dd-text-collapse dd-text-collapse-max-length="50" dd-text-collapse-text="{{com.msg}}"></p>
-					<small>{{getPostDate(com.timestamp)}}</small>
+					<small>{{com.dateString}}</small>
 				</div>
 				<div id="comment-list{{ $index + 1 }}" class="collapse">
 					<div class="comment-group">
