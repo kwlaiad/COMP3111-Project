@@ -131,6 +131,18 @@ $scope.addTodo = function () {
 		window.alert("Please select category.");
 		return;
 	}
+	
+	switch(newCate) {
+		case "opt1":	newCate = "Lecture";
+						break;
+		case "opt2":	newCate = "Lab";
+						break;
+		case "opt3":	newCate = "Tutorial";
+						break;
+		case "opt4":	newCate = "Others";
+						break;
+		default:		break;
+	}
 
 	var firstAndLast = $scope.getFirstAndRestSentence(newTodo);
 	var head = firstAndLast[0];
