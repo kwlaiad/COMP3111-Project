@@ -88,6 +88,7 @@ describe('TodoCtrl', function() {
         expect(window.scrollY).toBe(0);
       });
 	  
+	describe('$scope.addTodo', function() {
 		
 		it('addTodo testing', function() {
 			var ctrl = controller('TodoCtrl', {
@@ -272,6 +273,7 @@ describe('TodoCtrl', function() {
 			expect(scope.maxQuestion).toEqual(12);
 
 		});
-	
+	});
+	  
     });
   });

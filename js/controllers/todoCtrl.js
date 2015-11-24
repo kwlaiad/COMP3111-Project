@@ -148,7 +148,7 @@ $scope.addTodo = function () {
 		echo: 0,
 		report: 0,
 		order: 0,
-		comments: {},
+		comments: [],
 		new_com: '',
 		category: newCate
 	}).then(function(ref){
@@ -207,13 +207,16 @@ $scope.removeTodo = function (todo) {
 
 $scope.addComment = function (todo) {
 	var newcom = todo.new_com;
+	//var r_url = firebaseURL + roomId + "/questions/" + todo.$id + "/comments/";
+	//var ref = new Firebase(r_url);
+	//var com = $firebaseArray(ref);
 	
 	$scope.editedTodo = todo;
 	
 	if(!newcom.length) {
 		return;
 	}
-	
+	//$scope.todos.$save(todo);
 	todo.comments.push ({
 		msg: newcom,
 		dateString:	new Date(new Date().getTime()).toString()
